@@ -110,16 +110,16 @@ function applyBasicSettings() {
         }
     }
 
-    // Footer中的Logo
-    if (settings.logo_text) {
-        const footerLogoText = document.querySelector('.footer-logo-text');
-        if (footerLogoText) {
-            footerLogoText.textContent = settings.logo_text.split(' ')[0];
-        }
-    } else if (settings.site_name) {
+    // Footer中的Logo（优先使用 site_name，避免被旧的 logo_text 覆盖为大写）
+    if (settings.site_name) {
         const footerLogoText = document.querySelector('.footer-logo-text');
         if (footerLogoText) {
             footerLogoText.textContent = settings.site_name;
+        }
+    } else if (settings.logo_text) {
+        const footerLogoText = document.querySelector('.footer-logo-text');
+        if (footerLogoText) {
+            footerLogoText.textContent = settings.logo_text.split(' ')[0];
         }
     }
     

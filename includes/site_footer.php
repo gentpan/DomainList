@@ -1,7 +1,7 @@
     <footer class="footer">
         <div class="footer-main">
             <div class="footer-logo-section">
-                <div class="footer-logo-text">DOMAIN.LS</div>
+                <div class="footer-logo-text">://domain.ls</div>
                 <p class="footer-description">
                     专注于优质域名展示与交易服务，为企业与品牌提供更高价值的数字资产。
                 </p>
@@ -30,13 +30,13 @@
             <div class="footer-column">
                 <div class="footer-column-title">关注</div>
                 <ul class="footer-links">
-                    <li><a href="#">微信公众号</a></li>
-                    <li><a href="#">微博</a></li>
+                    <li><a href="https://github.com/gentpan/DomainList" target="_blank" rel="noopener">GitHub</a></li>
+                    <li><a href="https://xifeng.net" target="_blank" rel="noopener">西风</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="copyright">© 2026 DOMAIN.LS. All Rights Reserved.</div>
+            <div class="copyright">© 2026 ://domain.ls. All Rights Reserved.</div>
             <div class="footer-nav">
                 <a class="footer-nav-link" href="#" onclick="showDocModal(event)">
                     <svg class="footer-nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
