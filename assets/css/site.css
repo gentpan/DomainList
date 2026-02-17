@@ -221,6 +221,7 @@ a {
 }
 
 .top-brand-title {
+    display: inline-block;
     font-size: 30px;
     font-weight: 700;
     color: var(--text-primary);
@@ -234,6 +235,12 @@ a {
     -webkit-touch-callout: none;
     -webkit-tap-highlight-color: transparent;
     cursor: default;
+    transform: translateZ(0) scale(1);
+    transform-origin: center center;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .top-brand-subtitle {
@@ -246,8 +253,8 @@ a {
 }
 
 .top-brand:hover .top-brand-title {
-    transform: scale(1.08);
-    transform-origin: left center;
+    transform: translateZ(0) scale(1.06);
+    transform-origin: center center;
 }
 
 .top-subtitle-right {
@@ -1242,6 +1249,55 @@ html[data-theme="dark"] .theme-option.active svg {
     padding: 32px;
 }
 
+.modal-body h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 10px;
+}
+
+.modal-body p {
+    margin: 0 0 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.modal-body ul {
+    margin: 0 0 16px;
+    padding-left: 18px;
+}
+
+.modal-body li {
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+#docModal .modal,
+#termsModal .modal,
+#privacyModal .modal {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+#docModal .modal-body,
+#termsModal .modal-body,
+#privacyModal .modal-body {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+#docModal .modal-subtitle,
+#termsModal .modal-subtitle,
+#privacyModal .modal-subtitle {
+    font-family: "Cairo Play", "IBM Plex Sans", Arial, sans-serif;
+}
+
+#docModal .modal-body .modal-latin,
+#termsModal .modal-body .modal-latin,
+#privacyModal .modal-body .modal-latin {
+    font-family: "Cairo Play", "IBM Plex Sans", Arial, sans-serif;
+    letter-spacing: 0.01em;
+}
+
 .detail-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1419,11 +1475,13 @@ html[data-theme="dark"] .theme-option.active svg {
 }
 
 .advantage-item {
+    position: relative;
+    overflow: hidden;
     background: var(--bg-primary);
-    padding: 32px;
+    padding: 28px 120px 28px 28px;
     border-radius: 8px;
     border: 1px solid var(--border-color);
-    text-align: center;
+    text-align: left;
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
@@ -1439,27 +1497,38 @@ html[data-theme="dark"] .theme-option.active svg {
 }
 
 .advantage-icon {
-    width: 48px;
-    height: 48px;
-    margin: 0 auto 20px;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    width: 116px;
+    height: 116px;
     color: #72BF80;
+    opacity: 0.14;
+    pointer-events: none;
+    z-index: 0;
 }
 
 [data-theme="dark"] .advantage-icon {
     color: #72BF80;
+    opacity: 0.2;
 }
 
 .advantage-title {
+    position: relative;
+    z-index: 1;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 12px;
 }
 
 .advantage-description {
+    position: relative;
+    z-index: 1;
     font-size: 14px;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.75;
+    max-width: 40ch;
 }
 
 /* ==================== è”ç³»åŒºåŸŸ ==================== */
@@ -1538,10 +1607,17 @@ html[data-theme="dark"] .theme-option.active svg {
 }
 
 .footer-logo-text {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 800;
+    font-family: "Cairo Play", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    letter-spacing: 0.01em;
     color: #ffffff;
     margin-bottom: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
 }
 
 .footer-description {
@@ -1719,6 +1795,17 @@ html[data-theme="dark"] .theme-option.active svg {
     
     .advantages-grid {
         grid-template-columns: 1fr;
+    }
+
+    .advantage-item {
+        padding: 22px 92px 22px 20px;
+    }
+
+    .advantage-icon {
+        width: 88px;
+        height: 88px;
+        right: -10px;
+        top: -10px;
     }
     
     /* å‹æƒ…é“¾æŽ¥ç§»åŠ¨ç«¯ä¼˜åŒ– */
@@ -2766,6 +2853,24 @@ a, button {
     margin: 0 auto;
 }
 
+.page-content-wide {
+    max-width: calc(var(--site-max-width) + 48px);
+}
+
+.page-content-inner-wide {
+    max-width: calc(var(--site-max-width) + 48px);
+}
+
+/* 强制覆盖通用 page-content 限制，确保 WHOIS 页面宽度与首页宽版一致 */
+.page-content.page-content-wide {
+    max-width: calc(var(--site-max-width) + 48px) !important;
+}
+
+.page-content-inner.page-content-inner-wide {
+    max-width: calc(var(--site-max-width) + 48px) !important;
+    width: 100%;
+}
+
 .contact-shell {
     display: flex;
     flex-direction: column;
@@ -2893,6 +2998,7 @@ a, button {
     flex-direction: column;
     gap: 18px;
     max-width: 100%;
+    width: 100%;
 }
 
 .whois-search {

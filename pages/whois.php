@@ -1,6 +1,8 @@
 <?php
 $page_title = 'WHOIS 查询';
 $page_subtitle = '基于 RDAP 的域名信息查询';
+$page_content_class = 'page-content page-content-wide';
+$page_inner_class = 'page-content-inner page-content-inner-wide';
 $page_content = <<<HTML
 <div class="whois-shell">
     <div class="whois-search">

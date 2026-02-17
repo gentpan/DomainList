@@ -314,7 +314,15 @@ require __DIR__ . '/includes/site_header.php';
                 <button class="modal-close" onclick="closeModal('docModal')">×</button>
             </div>
             <div class="modal-body">
-                <p>如需帮助，请通过联系表单发送您的问题，我们会尽快回复。</p>
+                <h3>如何使用本站</h3>
+                <ul>
+                    <li>在首页可按关键词、后缀筛选域名，并通过分页浏览全部列表。</li>
+                    <li>点击域名卡片可查看详细信息，包括注册时间、到期时间、在售状态与简介。</li>
+                    <li>通过“访问购买”可跳转至对应交易页面，或使用“进一步咨询”提交需求。</li>
+                    <li><span class="modal-latin">WHOIS</span> 页面支持基于 <span class="modal-latin">RDAP</span> 的域名信息查询，用于核验基础注册信息。</li>
+                </ul>
+                <h3>联系我们</h3>
+                <p>如需批量采购、品牌命名建议或合作展示，请通过联系表单或邮件与我们沟通，我们将尽快回复。</p>
             </div>
         </div>
     </div>
@@ -327,7 +335,15 @@ require __DIR__ . '/includes/site_header.php';
                 <button class="modal-close" onclick="closeModal('termsModal')">×</button>
             </div>
             <div class="modal-body">
-                <p>所有域名咨询与交易需遵循相关法律法规，具体以沟通确认内容为准。</p>
+                <h3>条款说明</h3>
+                <ul>
+                    <li>本站展示信息用于域名咨询与交易沟通，不构成法律、投资或财务建议。</li>
+                    <li>域名状态、价格与交易条件以最终书面确认或平台实际页面为准。</li>
+                    <li>用户提交咨询即视为同意我们基于沟通目的与您联系。</li>
+                    <li>禁止利用本站从事违法、侵权或恶意爬取等行为。</li>
+                </ul>
+                <h3>责任范围</h3>
+                <p>因第三方平台规则变更、网络中断或不可抗力导致的信息偏差或服务中断，我们将在合理范围内协助处理，但不承担超出法律规定的责任。</p>
             </div>
         </div>
     </div>
@@ -340,7 +356,16 @@ require __DIR__ . '/includes/site_header.php';
                 <button class="modal-close" onclick="closeModal('privacyModal')">×</button>
             </div>
             <div class="modal-body">
-                <p>我们仅用于联系沟通目的收集您的信息，不会向第三方披露。</p>
+                <h3>信息收集</h3>
+                <p>我们仅在您主动提交咨询时收集必要信息（如姓名、邮箱、主题与留言内容），用于回复与业务沟通。</p>
+                <h3>信息使用</h3>
+                <ul>
+                    <li>用于域名咨询回复、交易沟通与服务改进。</li>
+                    <li>不会将您的个人信息出售给第三方。</li>
+                    <li>除法律法规要求外，不向无关第三方披露您的信息。</li>
+                </ul>
+                <h3>数据安全</h3>
+                <p>我们采取合理的技术与管理措施保护数据安全。若您希望查询、更正或删除已提交信息，可通过联系渠道提出请求。</p>
             </div>
         </div>
     </div>
