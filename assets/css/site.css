@@ -1746,6 +1746,18 @@ html[data-theme="dark"] .theme-option.active svg {
         font-size: 13px;
         white-space: nowrap;
     }
+    
+    .lang-switcher {
+        position: absolute;
+        top: 12px;
+        right: 16px;
+        font-size: 12px;
+    }
+    
+    .top-bar-container {
+        position: relative;
+        padding-top: 8px;
+    }
 
     .logo-text {
         font-size: 32px;
@@ -1836,6 +1848,40 @@ html[data-theme="dark"] .theme-option.active svg {
         grid-template-columns: 1fr;
         gap: 40px;
         padding: 40px 20px;
+    }
+    
+    .modal-overlay {
+        padding: 16px;
+        align-items: flex-start;
+    }
+    
+    .modal {
+        max-width: 100%;
+        width: 100%;
+        max-height: calc(100vh - 32px);
+        border-radius: 12px;
+    }
+    
+    .modal-header {
+        padding: 20px;
+    }
+    
+    .modal-title {
+        font-size: 20px;
+        padding-right: 40px;
+    }
+    
+    .modal-close {
+        top: 20px;
+        right: 20px;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+    
+    .modal-large {
+        max-width: 100%;
     }
     
     .footer-logo-section {
@@ -1932,6 +1978,52 @@ html[data-theme="dark"] .theme-option.active svg {
 
     .domain-grid {
         grid-template-columns: 1fr;
+        padding: 0 12px;
+        gap: 12px;
+    }
+    
+    .domain-card {
+        aspect-ratio: auto;
+        min-height: 200px;
+    }
+    
+    .domain-name {
+        font-size: 20px;
+    }
+    
+    .domain-card .card-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .domain-card .card-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .top-brand-title {
+        font-size: 20px;
+    }
+    
+    .top-subtitle-right {
+        display: none;
+    }
+    
+    .lang-switcher {
+        top: 8px;
+        right: 12px;
+    }
+    
+    .page-hero {
+        padding: 40px 16px;
+    }
+    
+    .page-title {
+        font-size: 24px;
+    }
+    
+    .section-title {
+        font-size: 24px;
     }
 
     .logo-text {
@@ -2761,6 +2853,19 @@ a, button {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.domain-card .btn {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.filter-chip {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .domain-card:not(.domain-card-list) .card-actions {
@@ -2824,7 +2929,25 @@ a, button {
 @media (max-width: 768px) {
     .filter-bar {
         padding: 0 16px;
-        gap: 16px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    
+    .filter-group {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 4px;
+    }
+    
+    .filter-group::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .filter-chips {
+        flex-wrap: nowrap;
+        min-width: min-content;
     }
 
     .domain-count-badge-inline {
