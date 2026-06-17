@@ -1714,20 +1714,41 @@ html[data-theme="dark"] .theme-option.active svg {
 
 @media (max-width: 768px) {
     .top-bar-container {
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 10px;
+        padding: 12px 16px;
     }
 
     .top-brand {
         min-width: 0;
         text-align: center;
         gap: 0;
+        order: 1;
     }
 
     .top-brand-title {
-        font-size: 24px;
+        font-size: 20px;
+    }
+
+    .top-nav {
+        order: 3;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .top-nav a {
+        font-size: 13px;
+        white-space: nowrap;
+        padding: 4px 8px;
+    }
+
+    .top-subtitle-right {
+        display: none;
     }
 
     .top-subtitle-right {
@@ -1764,30 +1785,57 @@ html[data-theme="dark"] .theme-option.active svg {
     }
 
     .hero-welcome-row {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: 10px;
     }
 
     .hero-promo {
-        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+        grid-template-columns: 1fr;
     }
 
     .hero-promo-main {
-        border-right: 1px solid var(--border-color);
-        border-bottom: none;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 16px;
     }
 
     .hero-promo-main h2 {
-        font-size: 22px;
+        font-size: 20px;
+    }
+
+    .hero-promo-label {
+        font-size: 10px;
+    }
+
+    .hero-promo-main p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .hero-promo-link {
+        font-size: 12px;
+    }
+
+    .hero-promo-image-link,
+    .hero-promo-image {
+        min-height: 160px;
+    }
+
+    .hero-promo-side {
+        grid-template-rows: auto;
+    }
+
+    .hero-promo-mini {
+        padding: 12px 16px;
     }
 
     .welcome-showcase {
-        grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+        grid-template-columns: 1fr;
     }
 
     .welcome-logos {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        height: 100%;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        height: auto;
     }
     
     .domain-grid {
@@ -1972,8 +2020,33 @@ html[data-theme="dark"] .theme-option.active svg {
 
 @media (max-width: 480px) {
     .hero-welcome-row {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: 8px;
+    }
+
+    .hero-promo-main {
+        padding: 14px;
+    }
+
+    .hero-promo-main h2 {
+        font-size: 18px;
+    }
+
+    .hero-promo-mini {
+        padding: 10px 14px;
+    }
+
+    .hero-promo-mini strong {
+        font-size: 13px;
+    }
+
+    .hero-promo-image-link,
+    .hero-promo-image {
+        min-height: 140px;
+    }
+
+    .welcome-logos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .domain-grid {
